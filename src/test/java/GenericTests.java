@@ -40,4 +40,12 @@ public class GenericTests extends TestCase {
         Calculadora calc = new Calculadora();
         assertEquals(6,calc.add("1\n2,3"));
     }
+
+    @Test
+    public void testCalcNewDelimiter(){
+        Calculadora calc = new Calculadora();
+        assertEquals(3,calc.add("//;\n1;2"));
+        assertEquals(3,calc.add("//\n1;2"));
+        assertEquals(0,calc.add("\n//1;2"));
+    }
 }
