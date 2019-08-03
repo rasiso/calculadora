@@ -24,9 +24,20 @@ public class GenericTests extends TestCase {
     }
 
     @Test
-    public void testCalcIvalidParam(){
+    public void testCalcInvalidParam(){
         Calculadora calc = new Calculadora();
-        System.out.println(calc.add("a,sajl,2;asd,3,1;8,1"));
+        assertEquals(4,calc.add("a,sajl,2;asd,3,1;8,1"));
     }
 
+    /*@Test
+    public void testCalcMax2numbers(){
+        Calculadora calc = new Calculadora();
+        assertEquals(3,calc.add("1,2,3"));
+    }*/
+
+    @Test
+    public void testCalcAcceptNewLine(){
+        Calculadora calc = new Calculadora();
+        assertEquals(6,calc.add("1\n2,3"));
+    }
 }

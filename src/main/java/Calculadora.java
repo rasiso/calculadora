@@ -5,7 +5,7 @@ public class Calculadora {
 
     public int add(String numbers) {
         int soma = 0;
-        List<String> itens = Arrays.asList(numbers.split(","));
+        List<String> itens = Arrays.asList(numbers.split("[\\,\n\t]+"));
 
             for (int i = 0; i < itens.size(); i++) {
                 try {
