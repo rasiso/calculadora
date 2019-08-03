@@ -7,6 +7,7 @@ public class Calculadora {
     public int add(String values) {
         int soma = 0;
         int init = 0;
+        int number;
 
         String delimiter = "[\\\\,\\n\\t]+";
         String secondPart = "";
@@ -30,13 +31,23 @@ public class Calculadora {
         for (int i = 0; i < numberList.size(); i++) {
             numbers = Arrays.asList(numberList.get(i).split(delimiter));
             for (int x = 0; x < numbers.size(); x++) {
+                number = 0;
                 try {
-                    soma += Integer.parseInt(numbers.get(x));
+                    number = Integer.parseInt(numbers.get(x));
+                    if(isNegative(number)){
+                        System.out.println("Números negativos não são permitidos: "+number);
+                    } else {
+                        soma += Integer.parseInt(numbers.get(x));
+                    }
                 } catch (NumberFormatException e){
                     continue;
                 }
             }
         }
         return soma;
+    }
+
+    private boolean isNegative(int number){
+        return number < 0;
     }
 }

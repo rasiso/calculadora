@@ -46,6 +46,12 @@ public class GenericTests extends TestCase {
         Calculadora calc = new Calculadora();
         assertEquals(3,calc.add("//;\n1;2"));
         assertEquals(3,calc.add("//\n1;2"));
-        assertEquals(0,calc.add("\n//1;2"));
+        assertEquals(2,calc.add("\n//1,2"));
+    }
+
+    @Test
+    public void testCalcnegativeNumbers(){
+        Calculadora calc = new Calculadora();
+        assertEquals(4,calc.add("-1,-2,4"));
     }
 }
