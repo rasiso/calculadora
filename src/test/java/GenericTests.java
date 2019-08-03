@@ -47,6 +47,7 @@ public class GenericTests extends TestCase {
         assertEquals(3,calc.add("//;\n1;2"));
         assertEquals(3,calc.add("//\n1;2"));
         assertEquals(2,calc.add("\n//1,2"));
+        assertEquals(3,calc.add("//#//\n1#//2"));
     }
 
     @Test
@@ -60,4 +61,6 @@ public class GenericTests extends TestCase {
         Calculadora calc = new Calculadora();
         assertEquals(4,calc.add("1000,2000,4"));
     }
+
+
 }

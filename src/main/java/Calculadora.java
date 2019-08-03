@@ -18,7 +18,7 @@ public class Calculadora {
 
         if(linhas.size() > 1 && linhas.get(0).contains("//")) {
 
-            delimiter = linhas.get(0).replace("//", "");
+            delimiter = linhas.get(0).replaceFirst("//", "");
             //numberList = Arrays.asList(linhas.get(1).split(delimiter));
             init = 1;
 
