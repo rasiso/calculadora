@@ -36,7 +36,7 @@ public class Calculadora {
                     number = Integer.parseInt(numbers.get(x));
                     if(isNegative(number)){
                         System.out.println("Números negativos não são permitidos: "+number);
-                    } else {
+                    } else if (number < 1000){
                         soma += Integer.parseInt(numbers.get(x));
                     }
                 } catch (NumberFormatException e){

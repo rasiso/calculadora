@@ -50,8 +50,14 @@ public class GenericTests extends TestCase {
     }
 
     @Test
-    public void testCalcnegativeNumbers(){
+    public void testCalcNegativeNumbers(){
         Calculadora calc = new Calculadora();
         assertEquals(4,calc.add("-1,-2,4"));
+    }
+
+    @Test
+    public void testCalcBiggerThan1000(){
+        Calculadora calc = new Calculadora();
+        assertEquals(4,calc.add("1000,2000,4"));
     }
 }
